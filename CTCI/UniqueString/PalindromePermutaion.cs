@@ -5,13 +5,13 @@ namespace UniqueString
 {
     class PalindromePermutaion
     {
-        static void Main(string[] args)
-        {
-            //MyVersion();
-            //CTCIVersion1();
-            //CTCIVersion2();
-            CTCIVersion3();
-        }
+        //static void Main(string[] args)
+        //{
+        //    //MyVersion();
+        //    //CTCIVersion1();
+        //    //CTCIVersion2();
+        //    CTCIVersion3();
+        //}
 
         public static void MyVersion()
         {

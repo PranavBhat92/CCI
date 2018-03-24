@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OneAway.cs" />
     <Compile Include="PalindromePermutaion.cs" />
     <Compile Include="Permutation.cs" />
     <Compile Include="UniqueString.cs" />
