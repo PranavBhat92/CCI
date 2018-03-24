@@ -2,7 +2,7 @@
 using System.Linq;
 
 
-namespace UniqueString
+namespace StringsAndArrays
 {
     class Permutation
     {

@@ -4,16 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UniqueString
+namespace StringsAndArrays
 {
     class OneAway
     {
-        static void Main(string[] args)
-        {
-            //MyVersion();
-            CTCIVersion();
-        }
+        //static void Main(string[] args)
+        //{
+        //    //MyVersion();
+        //    CTCIVersion();
+        //}
 
+        #region Not Wroking
         public static void MyVersion()
         {
             /*
@@ -66,7 +67,7 @@ namespace UniqueString
             Console.WriteLine(result);
             Console.ReadLine();
         }
-
+        #endregion
 
         public static void CTCIVersion()
         {

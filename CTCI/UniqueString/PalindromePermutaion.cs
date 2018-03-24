@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace UniqueString
+namespace StringsAndArrays
 {
     class PalindromePermutaion
     {

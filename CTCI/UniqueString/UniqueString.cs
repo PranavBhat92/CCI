@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace UniqueString
+namespace StringsAndArrays
 {
     class UniqueString
     {
