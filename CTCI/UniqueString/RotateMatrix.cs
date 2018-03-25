@@ -4,11 +4,11 @@ namespace StringsAndArrays
 {
     class RotateMatrix
     {
-        static void Main(string[] args)
-        {
-            //MyVersion();
-            CTCIVersion();
-        }
+        //static void Main(string[] args)
+        //{
+        //    //MyVersion();
+        //    CTCIVersion();
+        //}
 
         public static void CTCIVersion()
         {
@@ -19,7 +19,7 @@ namespace StringsAndArrays
                 { 13,14,15,16 } 
                          };
 
-            if (matrix.Length == 0 || matrix.Length != matrix.GetLength(0) * matrix.GetLength(1))
+            if (matrix.Length == 0 || matrix.GetLength(0) != matrix.GetLength(1))
             {
                 Console.WriteLine("Matrix is not square matrix!");
                 Console.ReadLine();
@@ -38,16 +38,16 @@ namespace StringsAndArrays
             Console.WriteLine();
 
             var n = matrix.GetLength(0);
+            // Breaking matrix into layers let you go from outside layer to inside layer
             for (int layer = 0; layer < n/2; layer++)
             {
-                int first = layer;
-                int last = n - layer - 1;
+                int first = layer;              // From pointer
+                int last = (n - 1) - layer;     // To piinter
 
                 for (int i = first; i < last; i++)
                 {
-                    int offset = i - first;
-
-                    int top = matrix[first,i];
+                    int offset = i - first; // To track to which offset position, the number should be placed
+                    int top = matrix[first, i];
 
                     matrix[first, i] = matrix[last - offset, first];
                     matrix[last - offset, first] = matrix[last, last - offset];
