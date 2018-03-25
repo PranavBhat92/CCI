@@ -46,6 +46,7 @@
     <Compile Include="OneAway.cs" />
     <Compile Include="PalindromePermutaion.cs" />
     <Compile Include="Permutation.cs" />
+    <Compile Include="RotateMatrix.cs" />
     <Compile Include="StringCompression.cs" />
     <Compile Include="UniqueString.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

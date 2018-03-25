@@ -8,11 +8,11 @@ namespace StringsAndArrays
 {
     class StringCompression
     {
-        static void Main(string[] args)
-        {
-            //MyVersion();
-            CTCIVersion();
-        }
+        //static void Main(string[] args)
+        //{
+        //    //MyVersion();
+        //    CTCIVersion();
+        //}
 
 
         public static void MyVersion()
