@@ -48,6 +48,7 @@
     <Compile Include="Permutation.cs" />
     <Compile Include="RotateMatrix.cs" />
     <Compile Include="StringCompression.cs" />
+    <Compile Include="StringRotation.cs" />
     <Compile Include="UniqueString.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Urlify.cs" />
