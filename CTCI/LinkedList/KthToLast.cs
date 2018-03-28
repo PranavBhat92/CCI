@@ -4,11 +4,11 @@ namespace LinkedList
 {
     class KthToLast
     {
-        public static void Main(string[] srgs)
-        {
-            //MyVersion();
-            CTCIVersion();
-        }
+        //public static void Main(string[] srgs)
+        //{
+        //    //MyVersion();
+        //    CTCIVersion();
+        //}
 
         public static void MyVersion()
         {
