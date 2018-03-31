@@ -1,20 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LinkedList
 {
     class Partition
     {
-        //public static void Main(string[] srgs)
-        //{
-        //    //MyVersion();    // Not Working
-        //    // The catch here is that I sould ask the interviewer whether I can use extra linked list
-        //    CTCIVersion();
-        //}
-        
+        public static void Main(string[] srgs)
+        {
+            //MyVersion();    // Not Working
+            // The catch here is that I sould ask the interviewer whether I can use extra linked list
+            //CTCIVersion1();
+            CTCIVersion2();
+        }
+
         public static void MyVersion()
         {
             LinkedListNode node = new LinkedListNode { Data = 3 };
@@ -58,9 +55,9 @@ namespace LinkedList
                     theNode.Next = theNode.Next.Next;
                     back = back.Next;
                 }
-                    theNode = theNode.Next;
+                theNode = theNode.Next;
             }
-            
+
 
             Console.WriteLine("*****************************After*****************************");
             temp = node;
@@ -73,7 +70,7 @@ namespace LinkedList
             Console.ReadLine();
         }
 
-        public static void CTCIVersion()
+        public static void CTCIVersion1()
         {
             LinkedListNode node = new LinkedListNode { Data = 3 };
             node.Next = new LinkedListNode { Data = 5 };
@@ -115,13 +112,13 @@ namespace LinkedList
                     else
                     {
                         beforeEnd.Next = node;          // Attach the element to beforeEnd
-                        beforeEnd = beforeEnd.Next;               // navigate
+                        beforeEnd = beforeEnd.Next;     // navigate
                     }
                 }
                 else
                 {
-                  
-                  if (afterStart == null)
+
+                    if (afterStart == null)
                     {
                         afterStart = node;
                         afterEnd = afterStart;
@@ -165,5 +162,62 @@ namespace LinkedList
 
         }
 
+        public static void CTCIVersion2()
+        {
+
+            LinkedListNode node = new LinkedListNode { Data = 3 };
+            node.Next = new LinkedListNode { Data = 5 };
+            node.Next.Next = new LinkedListNode { Data = 8 };
+            node.Next.Next.Next = new LinkedListNode { Data = 5 };
+            node.Next.Next.Next.Next = new LinkedListNode { Data = 10 };
+            node.Next.Next.Next.Next.Next = new LinkedListNode { Data = 2 };
+            node.Next.Next.Next.Next.Next.Next = new LinkedListNode { Data = 1 };
+
+            Console.WriteLine("*****************************Before*****************************");
+            var temp = node;
+            while (temp != null)
+            {
+                Console.WriteLine(temp.Data);
+                temp = temp.Next;
+            }
+
+
+            var x = 5;
+            LinkedListNode head = node;
+            LinkedListNode tail = node;
+
+            while (node != null)
+            {
+                LinkedListNode next = node.Next;
+                if (node.Data < x)
+                {
+                    /* Insert node at head. */
+                    node.Next = head;
+                    head = node;
+                }
+                else
+                {
+                    /* Insert node at tail. */
+                    tail.Next = node;
+                    tail = node;
+                }
+                node = next;
+            }
+            tail.Next = null;
+
+            // The head has changed, so we need to return it to the user.
+            temp = head;
+
+
+            Console.WriteLine("*****************************After*****************************");
+            while (temp != null)
+            {
+                Console.WriteLine(temp.Data);
+                temp = temp.Next;
+            }
+
+            Console.ReadLine();
+
+        }
     }
 }
