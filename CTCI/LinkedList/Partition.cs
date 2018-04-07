@@ -4,13 +4,13 @@ namespace LinkedList
 {
     class Partition
     {
-        public static void Main(string[] srgs)
-        {
-            //MyVersion();    // Not Working
-            // The catch here is that I sould ask the interviewer whether I can use extra linked list
-            //CTCIVersion1();
-            CTCIVersion2();
-        }
+        //public static void Main(string[] srgs)
+        //{
+        //    //MyVersion();    // Not Working
+        //    // The catch here is that I sould ask the interviewer whether I can use extra linked list
+        //    //CTCIVersion1();
+        //    CTCIVersion2();
+        //}
 
         public static void MyVersion()
         {
