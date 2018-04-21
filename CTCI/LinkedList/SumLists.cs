@@ -7,9 +7,9 @@ namespace LinkedList
         public static void Main(string[] srgs)
         {
             //MyVersion();
-            MyVersionFollowUp();
+            //MyVersionFollowUp();        // wrong
             //CTCIVersion();
-            //CTCIFollowUp();
+            CTCIFollowUp();
         }
 
 
@@ -70,13 +70,13 @@ namespace LinkedList
                 Output: C = (9 -> 1 -> 2)
              */
 
-            LinkedListNode A = new LinkedListNode { Data = 7 };
+            LinkedListNode A = new LinkedListNode { Data = 6 };
             A.Next = new LinkedListNode { Data = 1 };
-            A.Next.Next = new LinkedListNode { Data = 6 };
+            A.Next.Next = new LinkedListNode { Data = 7 };
 
-            LinkedListNode B = new LinkedListNode { Data = 5 };
+            LinkedListNode B = new LinkedListNode { Data = 2 };
             B.Next = new LinkedListNode { Data = 9 };
-            B.Next.Next = new LinkedListNode { Data = 2 };
+            B.Next.Next = new LinkedListNode { Data = 5 };
 
             var Alength = 0;
             var Blength = 0;
@@ -200,9 +200,10 @@ namespace LinkedList
         }
 
 
-        public  static LinkedListNode addlists(LinkedListNode l1, LinkedListNode l2, int carry)
+        public static LinkedListNode addlists(LinkedListNode l1, LinkedListNode l2, int carry)
         {
-            if (l1 == null && l2 == null && carry == 0) {
+            if (l1 == null && l2 == null && carry == 0)
+            {
                 return null;
             }
             LinkedListNode result = new LinkedListNode();
@@ -229,14 +230,114 @@ namespace LinkedList
         }
 
 
+
+        public class PartialSum
+        {
+            public LinkedListNode sum = null;
+            public int carry = 0;
+        }
+
         public static void CTCIFollowUp()
         {
             /*
-             **************************************************************************************************************
-             Implement this without copying
-             **************************************************************************************************************
-             */
+                1) Pad the shorter ones
+                2) Recursively call the function
+            */
+
+            LinkedListNode A = new LinkedListNode { Data = 6 };
+            A.Next = new LinkedListNode { Data = 1 };
+            A.Next.Next = new LinkedListNode { Data = 7 };
+
+            LinkedListNode B = new LinkedListNode { Data = 2 };
+            B.Next = new LinkedListNode { Data = 9 };
+            B.Next.Next = new LinkedListNode { Data = 5 };
+            B.Next.Next.Next = new LinkedListNode { Data = 0 };
+            // Output = 617 + 2950 =    3567
+
+
+            var lengthA = Length(A);
+            var lengthB = Length(B);
+            var diff = Math.Abs(lengthA - lengthB);
+
+            if (lengthA > lengthB)
+            {
+                B = PadList(B, diff);
+            }
+            else
+            {
+                A = PadList(A, diff);
+            }
+
+            var sum = AddListFollowup(A, B);
+            if (sum.carry != 0)
+            {
+                var result = InsertBefore(sum.sum, sum.carry);
+            }
+
+            Console.WriteLine("*****************************Result*****************************");
+            var temp = sum.sum;
+            while (temp != null)
+            {
+                Console.WriteLine(temp.Data);
+                temp = temp.Next;
+            }
+            Console.ReadLine();
+        }        
+
+
+        public static int Length(LinkedListNode n1)
+        {
+            var length = 0;
+            while (n1 != null)
+            {
+                n1 = n1.Next;
+                length++;
+            }
+            return length;
         }
 
+        public static LinkedListNode PadList(LinkedListNode node, int diff)
+        {
+            for (int i = 0; i < diff; i++)
+            {
+                var zeroNode = new LinkedListNode { Data = 0 };
+                zeroNode.Next = node;
+                node = zeroNode;
+            }
+
+            return node;
+        }        
+
+        public static PartialSum AddListFollowup(LinkedListNode A, LinkedListNode B)
+        {
+            if (A == null && B == null)
+            {
+                return new PartialSum();
+            }
+
+            var partialSum = AddListFollowup(A.Next, B.Next);
+            int result = partialSum.carry + A.Data + B.Data;
+
+            var fullResult = InsertBefore(partialSum.sum, result % 10);
+
+            partialSum.sum = fullResult;
+            partialSum.carry = result / 10;            
+
+            return partialSum;
+        }
+
+
+        public static LinkedListNode InsertBefore(LinkedListNode list, int data)
+        {
+            var node = new LinkedListNode();
+
+            node.Data = data;
+
+            if (list != null)
+            {
+                node.Next = list;
+            }
+            return node;
+        }
     }
 }
