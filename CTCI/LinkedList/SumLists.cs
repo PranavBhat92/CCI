@@ -4,13 +4,13 @@ namespace LinkedList
 {
     class SumLists
     {
-        public static void Main(string[] srgs)
-        {
-            //MyVersion();
-            //MyVersionFollowUp();        // wrong
-            //CTCIVersion();
-            CTCIFollowUp();
-        }
+        //public static void Main(string[] args)
+        //{
+        //    //MyVersion();
+        //    //MyVersionFollowUp();        // wrong
+        //    //CTCIVersion();
+        //    CTCIFollowUp();
+        //}
 
 
         public static void MyVersion()
