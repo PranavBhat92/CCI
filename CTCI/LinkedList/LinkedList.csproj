@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DeleteGiven.cs" />
+    <Compile Include="Intersection.cs" />
     <Compile Include="KthToLast.cs" />
     <Compile Include="LinkedListNode.cs" />
     <Compile Include="Palindrome.cs" />

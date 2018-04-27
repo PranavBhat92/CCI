@@ -8,13 +8,13 @@ namespace LinkedList
 {
     class Palindrome
     {
-        public static void Main(string[] args)
-        {
-            //MyVersion();
-            //CTCIVersion1();
-            //CTCIVersion2();
-            CTCIVersion3();
-        }
+        //public static void Main(string[] args)
+        //{
+        //    //MyVersion();
+        //    //CTCIVersion1();
+        //    //CTCIVersion2();
+        //    CTCIVersion3();
+        //}
 
 
         public static void MyVersion()
