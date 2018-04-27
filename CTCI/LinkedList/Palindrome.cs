@@ -12,7 +12,8 @@ namespace LinkedList
         {
             //MyVersion();
             //CTCIVersion1();
-            CTCIVersion2();
+            //CTCIVersion2();
+            CTCIVersion3();
         }
 
 
@@ -145,7 +146,6 @@ namespace LinkedList
             Console.ReadLine();
         }
 
-
         public static bool isPalindromev2(LinkedListNode N)
         {
             var fast = N;
@@ -178,6 +178,81 @@ namespace LinkedList
             }
 
             return true;
+
+        }
+
+        public static void CTCIVersion3()
+        {
+            LinkedListNode A = new LinkedListNode { Data = 1 };
+            A.Next = new LinkedListNode { Data = 2 };
+            A.Next.Next = new LinkedListNode { Data = 2 };
+            A.Next.Next.Next = new LinkedListNode { Data = 1 };
+
+            var temp = A;
+            while (temp != null)
+            {
+                Console.WriteLine(temp.Data);
+                temp = temp.Next;
+            }
+            
+            var palindrome = isPalindromev3(A);
+
+            Console.WriteLine("Is the list Palindrome : " + palindrome);
+            Console.ReadLine();
+        }
+
+        public static int lengthOfList(LinkedListNode node)
+        {
+            var size = 0;
+            while (node != null)
+            {
+                size++;
+                node = node.Next;
+            }
+            return size;
+        }
+
+        public class Result
+        {
+            public LinkedListNode node;
+            public bool result;
+
+            public Result(LinkedListNode node, bool result)
+            {
+                this.node = node;
+                this.result = result;
+            }
+        }
+
+
+        public static bool isPalindromev3(LinkedListNode node)
+        {
+            int length = lengthOfList(node);
+            Result p = isPalindromevRecurse(node, length);
+            return p.result;
+        }
+
+        public static Result isPalindromevRecurse(LinkedListNode node,int length)
+        {
+            if (node == null || length <= 0)
+            {
+                return new Result(node,true);
+            }
+            else if (length == 1)
+            {
+                return new Result(node.Next,true);
+            }
+
+            Result res = isPalindromevRecurse(node.Next, length - 2);
+
+            if (!res.result || res.node == null)
+            {
+                return res;
+            }
+
+            res.result = (node.Data == res.node.Data);
+            res.node = res.node.Next;
+            return res;
 
         }
 
