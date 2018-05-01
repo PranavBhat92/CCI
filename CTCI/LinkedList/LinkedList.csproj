@@ -48,6 +48,7 @@
     <Compile Include="Intersection.cs" />
     <Compile Include="KthToLast.cs" />
     <Compile Include="LinkedListNode.cs" />
+    <Compile Include="LoopDetection.cs" />
     <Compile Include="Palindrome.cs" />
     <Compile Include="Partition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
