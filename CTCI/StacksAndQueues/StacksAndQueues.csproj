@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StackMin.cs" />
     <Compile Include="ThreeInOne.cs" />
   </ItemGroup>
   <ItemGroup>
