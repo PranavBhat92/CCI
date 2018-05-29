@@ -4,11 +4,11 @@ namespace StringsAndArrays
 {
     class StringRotation
     {
-        static void Main(string[] args)
-        {
-            //MyVersion();
-            CTCIVersion();
-        }
+        //static void Main(string[] args)
+        //{
+        //    //MyVersion();
+        //    CTCIVersion();
+        //}
 
         public static void CTCIVersion()
         {

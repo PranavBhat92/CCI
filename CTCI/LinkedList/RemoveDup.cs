@@ -8,11 +8,11 @@ namespace LinkedList
 {
     class RemoveDup
     {
-        //public static void Main(string[] srgs)
-        //{
-        //    CTCIVersion1();
-        //    CTCIVersion2();
-        //}
+        public static void Main(string[] srgs)
+        {
+            CTCIVersion1();
+            //CTCIVersion2();
+        }
 
         static LinkedListNode node = new LinkedListNode
         {
