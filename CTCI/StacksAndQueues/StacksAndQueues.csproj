@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueueViaStacks.cs" />
+    <Compile Include="SortStacks.cs" />
     <Compile Include="StackMin.cs" />
     <Compile Include="StackOfPlates.cs" />
     <Compile Include="ThreeInOne.cs" />
